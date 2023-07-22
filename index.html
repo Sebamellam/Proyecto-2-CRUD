@@ -1,11 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>Toma de visitas de hora para la venta</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    
+  <header>
+    <nav>
+      <nav class="navbar navbar-expand-md bg-body-tertiary container-fluid bg-light">
+        <div class="container-fluid">
+          <a href="#" class="logo">
+            <img id="imagen-header" src="logo-sin-fondo.png" height="90" width="90" alt="Logo empresa">
+            <h2 class="nombre empresa"></h2>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Cátalogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </nav>
+  </header>
+  <main>
+    <div class="container-fluid row bg-secondary">
+      <h1 class="m-4 text-center">Reserva de visita para venta</h1>
+      <div class="container col-md-12 col-lg-12 col-xl-5">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nombre y Apellido</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nombre y Apellido">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Correo Electronico</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Dirrecion</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Dirrecion">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Comuna</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="Comuna">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="inputDate" placeholder="Fecha">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Horario</label>
+            <input type="time" class="form-control" id="inputTime" placeholder="Horario">
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnAdd" onclick="AddData()">Enviar</button>
+          <button type="submit" class="btn btn-primary" id="btnUpdate">Actualizar datos</button>
+        </form>
+      </div>
+      <div class=" text-center col-md-12 col-lg-12 col-xl-7 p-4">
+        <table class="table table-bordered table-primary" id="tableData" >
+          <thead>
+            <tr>
+              <th>Nombre y Apellido</th>
+              <th>Correo Electronico</th>
+              <th>Dirrecion</th>
+              <th>Comuna</th>
+              <th>Fecha</th>
+              <th>Horario</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  
 </body>
+
+<footer>
+  <div class="row p-5 text-dark">
+    <div class="col-xs-12 col-md-2 col-lg-2">
+      <img src="logo-sin-fondo.png" height="70" width="70">
+    </div>
+    <div class="col-xs-12 col-md-10 col-lg-10">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <h2>
+            Contáctanos
+          </h2>
+          <div class="mb-2">
+            <strong> Dirección</strong>
+            <a class="text-dark text-decoration-none" href="#"> Holanda 100, oficina 016.
+              <br> Providencia,Santiago, Chile</a>
+          </div>
+          <div class="mb-2">
+            <strong>Teléfono</strong>
+            <a class="text-dark text-decoration-none " href="#"> 22 898 1900 </a>
+          </div>
+          <div class="mb-2">
+            <strong>Correo</strong>
+            <a class="text-dark text-decoration-none" href="#"> ventas@bepro.cl </a>
+          </div>
+          <div>
+            <strong>Horario</strong>
+            <a class="text-dark text-decoration-none" href="#"> 10:00 a 18:00 horas </a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3 ">
+          <h2>
+            De tu Interés
+          </h2>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Sobre nosotros</a>
+          </div>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Preguntas frecuentes</a>
+          </div>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Contacto</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <h2>
+            Información
+          </h2>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Políticas de despacho</a>
+          </div>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Garantías del servicio</a>
+          </div>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="#">Términos y condiciones</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <h2>
+            Suscríbete hoy
+          </h2>
+          <div class="mb-2">
+            <a class="text-dark text-decoration-none" href="">Enterate de todas las novedades y sorpresas que tenemos
+              preparadas
+              para ti </a>
+            <p class="lead">
+              <input type="email" placeholder="Introduce tu email" class="form-control w-60 mb-2" id="inputEmail4">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Enviar</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </html>
